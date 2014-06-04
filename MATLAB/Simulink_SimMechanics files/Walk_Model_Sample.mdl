@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.3"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -20,8 +20,8 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "2798213762"
-  PhysicalModelingParameterChecksum "3122227655"
+  PhysicalModelingChecksum "1033103487"
+  PhysicalModelingParameterChecksum "1530218966"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Tue Jun 03 12:59:51 2014"
   Creator		  "marsryu"
@@ -29,9 +29,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "marsryu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 04 15:13:53 2014"
-  RTWModifiedTimeStamp	  323775033
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Wed Jun 04 16:22:06 2014"
+  RTWModifiedTimeStamp	  323799647
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -629,27 +629,10 @@ Model {
     FontAngle		    "normal"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      Scope
-      ModelBased	      off
-      TickLabels	      "OneTimeTick"
-      ZoomMode		      "on"
-      Grid		      "on"
-      TimeRange		      "auto"
-      YMin		      "-5"
-      YMax		      "5"
-      SaveToWorkspace	      off
-      SaveName		      "ScopeData"
-      LimitDataPoints	      on
-      MaxDataPoints	      "5000"
-      Decimation	      "1"
-      SampleInput	      off
-      SampleTime	      "-1"
-    }
   }
   System {
     Name		    "Walk_Model_Sample"
-    Location		    [64, 83, 1278, 771]
+    Location		    [64, 83, 1261, 771]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -663,7 +646,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    39
+    SIDHighWatermark	    51
     Block {
       BlockType		      Reference
       Name		      "Foot_L"
@@ -751,7 +734,7 @@ Model {
       Name		      "Foot_R"
       SID		      20
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [925, 290, 985, 330]
+      Position		      [925, 450, 985, 490]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Bodies/Body"
@@ -861,7 +844,7 @@ Model {
       Name		      "Gimbal1"
       SID		      23
       Ports		      [0, 0, 0, 0, 0, 3, 2]
-      Position		      [405, 279, 455, 331]
+      Position		      [405, 439, 455, 491]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Joints/Gimbal"
@@ -889,7 +872,7 @@ Model {
       Name		      "Ground"
       SID		      2
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [105, 45, 145, 85]
+      Position		      [105, 40, 145, 80]
       LibraryVersion	      "1.1"
       UserDataPersistent      on
       UserData		      "DataTag0"
@@ -912,20 +895,22 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "1"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor"
-      SID		      25
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [935, 85, 975, 125]
+      Name		      "Joint Actuator"
+      SID		      40
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [495, 225, 535, 265]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -937,52 +922,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor1"
-      SID		      26
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [835, 100, 875, 140]
+      Name		      "Joint Actuator1"
+      SID		      41
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [495, 290, 535, 330]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -994,52 +961,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R2"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor10"
-      SID		      35
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [410, 370, 450, 410]
+      Name		      "Joint Actuator10"
+      SID		      50
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [835, 615, 875, 655]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1051,52 +1000,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R2"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor11"
-      SID		      36
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [410, 445, 450, 485]
+      Name		      "Joint Actuator11"
+      SID		      51
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [935, 560, 975, 600]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1108,52 +1039,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor2"
-      SID		      27
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [625, 115, 665, 155]
+      Name		      "Joint Actuator2"
+      SID		      42
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [495, 360, 535, 400]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1165,52 +1078,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R3"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor3"
-      SID		      28
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [520, 105, 560, 145]
+      Name		      "Joint Actuator3"
+      SID		      43
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [625, 150, 665, 190]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1222,52 +1117,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor4"
-      SID		      29
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [410, 105, 450, 145]
+      Name		      "Joint Actuator4"
+      SID		      44
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [835, 205, 875, 245]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1279,52 +1156,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R2"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor5"
-      SID		      30
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [410, 175, 450, 215]
+      Name		      "Joint Actuator5"
+      SID		      45
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [935, 150, 975, 190]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1336,52 +1195,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor6"
-      SID		      31
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [935, 370, 975, 410]
+      Name		      "Joint Actuator6"
+      SID		      46
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [500, 675, 540, 715]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1393,52 +1234,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor7"
-      SID		      32
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [835, 370, 875, 410]
+      Name		      "Joint Actuator7"
+      SID		      47
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [500, 750, 540, 790]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1450,52 +1273,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R2"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor8"
-      SID		      33
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [625, 370, 665, 410]
+      Name		      "Joint Actuator8"
+      SID		      48
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [500, 830, 540, 870]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1507,52 +1312,34 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R3"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
     }
     Block {
       BlockType		      Reference
-      Name		      "Joint Sensor9"
-      SID		      34
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [520, 370, 560, 410]
+      Name		      "Joint Actuator9"
+      SID		      49
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [625, 560, 665, 600]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -1564,66 +1351,21 @@ Model {
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
-      Muxed		      "on"
-      Pose		      "off"
-      Angle		      "on"
+      ActuationStyle	      "Force"
       AngleUnits	      "deg"
-      ArcVelocity	      "off"
       ArcVelocityUnits	      "deg/s"
-      ArcAcceleration	      "off"
       ArcAccelerationUnits    "deg/s^2"
-      CoordPosition	      "on"
       CoordPositionUnits      "m"
-      Velocity		      "off"
       VelocityUnits	      "m/s"
-      Acceleration	      "off"
       AccelerationUnits	      "m/s^2"
-      Quaternion	      "on"
-      QuaternionDT	      "off"
-      QuaternionDDT	      "off"
-      QuaternionUnits	      "off"
-      OutputVector	      "[1]"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
       ActiveIO		      "on"
       Width		      "1"
-      ClassName		      "JointSensor"
-      DialogClass	      "MechanicalSensorBlock"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
       Primitive		      "R1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N-m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N-m"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Left_Leg"
-      SID		      39
-      Ports		      [6]
-      Position		      [1145, 345, 1195, 535]
-      Floating		      off
-      Location		      [63, 48, 1281, 799]
-      Open		      off
-      NumInputPorts	      "6"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
-	axes5			"%<SignalLabel>"
-	axes6			"%<SignalLabel>"
-      }
-      YMin		      "-5~-5~-5~-5~-5~-5"
-      YMax		      "5~5~5~5~5~5"
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
@@ -1712,7 +1454,7 @@ Model {
       Name		      "LegDown_R"
       SID		      16
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [725, 290, 785, 330]
+      Position		      [725, 450, 785, 490]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Bodies/Body"
@@ -1876,7 +1618,7 @@ Model {
       Name		      "LegUp_R"
       SID		      8
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [510, 275, 570, 315]
+      Position		      [510, 435, 570, 475]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Bodies/Body"
@@ -1958,7 +1700,7 @@ Model {
       Name		      "Machine\nEnvironment"
       SID		      1
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [25, 55, 65, 75]
+      Position		      [25, 50, 65, 70]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DialogSource"
       SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
@@ -2029,7 +1771,7 @@ Model {
       Name		      "Revolute3"
       SID		      17
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [620, 282, 670, 333]
+      Position		      [620, 442, 670, 493]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Joints/Revolute"
@@ -2049,30 +1791,6 @@ Model {
       ClassName		      "Joint"
       DialogClass	      "JointBlock"
       R1Axis		      "[0 0 1]"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Right_Leg"
-      SID		      38
-      Ports		      [6]
-      Position		      [1145, 101, 1190, 264]
-      Floating		      off
-      Location		      [63, 48, 1281, 799]
-      Open		      off
-      NumInputPorts	      "6"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
-	axes5			"%<SignalLabel>"
-	axes6			"%<SignalLabel>"
-      }
-      YMin		      "-5~-5~-5~-5~-5~-5"
-      YMax		      "5~5~5~5~5~5"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
@@ -2109,7 +1827,7 @@ Model {
       Name		      "Universal"
       SID		      18
       Ports		      [0, 0, 0, 0, 0, 2, 2]
-      Position		      [830, 32, 880, 83]
+      Position		      [830, 47, 880, 98]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Joints/Universal"
@@ -2136,7 +1854,7 @@ Model {
       Name		      "Universal1"
       SID		      21
       Ports		      [0, 0, 0, 0, 0, 2, 2]
-      Position		      [830, 297, 880, 348]
+      Position		      [830, 457, 880, 508]
       LibraryVersion	      "1.1"
       DialogController	      "MECH.DynMechDlgSource"
       SourceBlock	      "mblibv1/Joints/Universal"
@@ -2322,7 +2040,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Universal"
       SrcPort		      LConn1
-      Points		      [-15, 0]
       DstBlock		      "LegDown_L"
       DstPort		      RConn1
     }
@@ -2330,6 +2047,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Foot_L"
       SrcPort		      LConn1
+      Points		      [-15, 0]
       DstBlock		      "Universal"
       DstPort		      RConn1
     }
@@ -2349,183 +2067,99 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Universal"
+      SrcBlock		      "Gimbal"
       SrcPort		      RConn2
-      Points		      [10, 0; 0, 35]
-      DstBlock		      "Joint Sensor"
-      DstPort		      LConn1
+      Points		      [5, 0; 0, 175]
+      DstBlock		      "Joint Actuator"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Universal"
-      SrcPort		      LConn2
-      Points		      [-10, 0; 0, 50]
-      DstBlock		      "Joint Sensor1"
-      DstPort		      LConn1
+      SrcBlock		      "Gimbal"
+      SrcPort		      LConn3
+      Points		      [0, 240]
+      DstBlock		      "Joint Actuator1"
+      DstPort		      RConn1
     }
     Line {
-      SrcBlock		      "Joint Sensor"
-      SrcPort		      1
-      Points		      [0, 15]
-      DstBlock		      "Right_Leg"
-      DstPort		      1
+      LineType		      "Connection"
+      SrcBlock		      "Gimbal"
+      SrcPort		      LConn2
+      Points		      [-15, 0; 0, 325]
+      DstBlock		      "Joint Actuator2"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Revolute2"
       SrcPort		      LConn2
-      Points		      [-10, 0; 0, 65]
-      DstBlock		      "Joint Sensor2"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor2"
-      SrcPort		      1
-      Points		      [135, 0; 0, 35]
-      DstBlock		      "Right_Leg"
-      DstPort		      3
+      Points		      [-10, 0; 0, 100]
+      DstBlock		      "Joint Actuator3"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Gimbal"
+      SrcBlock		      "Universal"
+      SrcPort		      LConn2
+      Points		      [-10, 0; 0, 140]
+      DstBlock		      "Joint Actuator4"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Universal"
       SrcPort		      RConn2
-      Points		      [15, 0; 0, 55]
-      DstBlock		      "Joint Sensor3"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor3"
-      SrcPort		      1
-      Points		      [20, 0; 0, 70]
-      DstBlock		      "Right_Leg"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Joint Sensor4"
-      SrcPort		      1
-      Points		      [20, 0; 0, 95]
-      DstBlock		      "Right_Leg"
-      DstPort		      5
+      Points		      [10, 0; 0, 85]
+      DstBlock		      "Joint Actuator5"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Gimbal"
+      SrcBlock		      "Gimbal1"
+      SrcPort		      RConn2
+      Points		      [5, 0; 0, 215]
+      DstBlock		      "Joint Actuator6"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Gimbal1"
       SrcPort		      LConn3
-      Points		      [-10, 0; 0, 55]
-      DstBlock		      "Joint Sensor4"
-      DstPort		      LConn1
+      Points		      [-10, 0; 0, 290]
+      DstBlock		      "Joint Actuator7"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Gimbal"
+      SrcBlock		      "Gimbal1"
       SrcPort		      LConn2
-      Points		      [-20, 0; 0, 140]
-      DstBlock		      "Joint Sensor5"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor5"
-      SrcPort		      1
-      Points		      [10, 0; 0, 50]
-      DstBlock		      "Right_Leg"
-      DstPort		      6
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Universal1"
-      SrcPort		      RConn2
-      Points		      [10, 0; 0, 55]
-      DstBlock		      "Joint Sensor6"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor6"
-      SrcPort		      1
-      Points		      [5, 0; 0, -25]
-      DstBlock		      "Left_Leg"
-      DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Universal1"
-      SrcPort		      LConn2
-      Points		      [-10, 0; 0, 55]
-      DstBlock		      "Joint Sensor7"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor7"
-      SrcPort		      1
-      Points		      [15, 0; 0, 40; 100, 0; 0, -35]
-      DstBlock		      "Left_Leg"
-      DstPort		      2
+      Points		      [-25, 0; 0, 385]
+      DstBlock		      "Joint Actuator8"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Revolute3"
       SrcPort		      LConn2
-      Points		      [-10, 0; 0, 70]
-      DstBlock		      "Joint Sensor8"
-      DstPort		      LConn1
+      Points		      [-10, 0; 0, 100]
+      DstBlock		      "Joint Actuator9"
+      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Gimbal1"
+      SrcBlock		      "Joint Actuator10"
+      SrcPort		      RConn1
+      Points		      [-15, 0; 0, -140]
+      DstBlock		      "Universal1"
+      DstPort		      LConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Universal1"
       SrcPort		      RConn2
-      Points		      [30, 0; 0, 70]
-      DstBlock		      "Joint Sensor9"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Gimbal1"
-      SrcPort		      LConn3
-      Points		      [-10, 0; 0, 70]
-      DstBlock		      "Joint Sensor10"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Gimbal1"
-      SrcPort		      LConn2
-      Points		      [-20, 0; 0, 160]
-      DstBlock		      "Joint Sensor11"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Joint Sensor11"
-      SrcPort		      1
-      Points		      [25, 0; 0, 50]
-      DstBlock		      "Left_Leg"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Joint Sensor10"
-      SrcPort		      1
-      Points		      [35, 0; 0, 115; 560, 0; 0, -20]
-      DstBlock		      "Left_Leg"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Joint Sensor9"
-      SrcPort		      1
-      Points		      [10, 0; 0, 105; 460, 0; 0, -40]
-      DstBlock		      "Left_Leg"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Joint Sensor8"
-      SrcPort		      1
-      Points		      [15, 0; 0, 95; 330, 0; 0, -60]
-      DstBlock		      "Left_Leg"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Joint Sensor1"
-      SrcPort		      1
-      Points		      [15, 0; 0, 25]
-      DstBlock		      "Right_Leg"
-      DstPort		      2
+      Points		      [10, 0; 0, 85]
+      DstBlock		      "Joint Actuator11"
+      DstPort		      RConn1
     }
   }
 }
