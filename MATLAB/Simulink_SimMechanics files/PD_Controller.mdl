@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,9 +29,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "marsryu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jun 01 22:21:59 2014"
-  RTWModifiedTimeStamp	  323562021
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Tue Jul 01 17:56:26 2014"
+  RTWModifiedTimeStamp	  326137942
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -114,7 +114,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.6.0"
 	  StartTime		  "0.0"
-	  StopTime		  "20"
+	  StopTime		  "10e+1"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -588,7 +588,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Simscape/SimMechanics"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition    " [ 200, 85, 1080, 715 ] "
     }
     PropName		    "ConfigurationSets"
@@ -784,7 +784,7 @@ Model {
   }
   System {
     Name		    "PD_Controller"
-    Location		    [681, 83, 1270, 754]
+    Location		    [615, 51, 1208, 809]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -870,14 +870,14 @@ Model {
       Ports		      [1]
       Position		      [740, 194, 770, 226]
       Floating		      off
-      Location		      [71, 56, 664, 791]
-      Open		      on
+      Location		      [73, 56, 666, 791]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
-      TimeRange		      "20"
+      TimeRange		      "100"
       YMin		      "0"
       YMax		      "6"
       DataFormat	      "StructureWithTime"
@@ -1114,8 +1114,8 @@ Model {
 	  ClassName		  "Ground"
 	  CoordPosition		  "[0 0 0]"
 	  CoordPositionUnits	  "m"
-	  StateVectorMgrId	  "1"
-	  MachineId		  "[2 0]"
+	  StateVectorMgrId	  "0"
+	  MachineId		  "[1 0]"
 	  ShowEnvPort		  on
 	}
 	Block {
