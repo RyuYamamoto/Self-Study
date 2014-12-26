@@ -1,2 +1,2 @@
-####自学自習用レポジトリ
-自分が個別で作成したプログラムや、Issueなどを管理するレポジトリ
+###For Self Study
+This Repository is to keep Source code that I was made as a hobby
