@@ -23,8 +23,42 @@ ga::~ga()
 void ga::initialize(int b)
 {
 	int num = 0;
+	indivisual = b;		//ŒÂ‘Ì”
 
 	srand(unsigned(time(NULL)));
 	for(int i=0;i<indivisual;i++){
 		for(int j=0;j<city_number;j++){
-			num = rand()%
+		}
+	}
+}
+
+//•]‰¿
+void ga::evaluate()
+{
+
+}
+
+//‘I‘ğ
+void ga::selection()
+{
+
+}
+
+//Œğ³
+void ga::cross_over()
+{
+
+}
+
+//“Ë‘R•ÏˆÙ
+void ga::mutation()
+{
+
+}
+
+//‹——£ŒvZ
+double calc_distance(int x,int y)
+{
+
+}
+
