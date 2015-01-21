@@ -16,13 +16,11 @@
 #define MAX_GENE			 108  //遺伝子長
 #define MUTATION	   0.1  　//突然変異する確率
 
-double theta;	  //角度
-double dtheta;  //角速度
-double dtheta2; //角加速度
-double x;       //位置
-double x1;      //速度
-double x2;     //加速度
-int gene[] = {1,-1};	//遺伝子表現
+double max_x = 3;							//最大位置
+double min_x = -3;						//最小位置
+double max_theta = M_PI / 6;	//棒の最大角度
+double min_theta = -M_PI / 6;	//棒の最小角度
+int gene[] = {1,-1};					//遺伝子表現
 
 //集団データ
 typedef struct{

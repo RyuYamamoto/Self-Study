@@ -34,6 +34,5 @@ void initialize()
 //評価
 void calculation_cost()
 {
-
+		int i;
 }
-
